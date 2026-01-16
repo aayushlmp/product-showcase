@@ -4,13 +4,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../interfaces/product';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteProductDialog } from '../delete-product-dialog/delete-product-dialog';
 import { AddToCartButton } from '../../../shopping-cart/components/add-to-cart-button/add-to-cart-button';
+import { Spinner } from '../../../components/spinner/spinner';
 
 @Component({
   selector: 'app-product-details',
@@ -19,10 +19,10 @@ import { AddToCartButton } from '../../../shopping-cart/components/add-to-cart-b
     MatButtonModule,
     MatIconModule,
     MatChipsModule,
-    MatProgressSpinnerModule,
     CurrencyPipe,
     DatePipe,
-    AddToCartButton
+    AddToCartButton,
+    Spinner
   ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.scss',

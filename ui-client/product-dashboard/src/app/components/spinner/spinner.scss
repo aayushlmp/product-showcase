@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  width: 100%;
+  grid-column: 1 / -1;     /* span all grid columns */
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;     /* vertical */
+  justify-content: center; /* horizontal */
+  width: 100%;
+  min-height: 50vh;       /* full viewport height */
+}

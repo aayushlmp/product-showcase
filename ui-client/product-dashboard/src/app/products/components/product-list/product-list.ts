@@ -1,22 +1,22 @@
-import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../../interfaces/product';
 import { ProductCard } from '../product-card/product-card';
 import { ProductService } from '../../services/product.service';
 import { PaginatedResponse } from '../../../interfaces/common';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CategoryDropDown } from '../category-drop-down/category-drop-down';
 import { Category } from '../../../interfaces/category';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatLabel } from '@angular/material/input';
+import { Spinner } from '../../../components/spinner/spinner';
 
 @Component({
   selector: 'app-product-list',
-  imports: [ProductCard, MatButtonModule, MatSlideToggleModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, CategoryDropDown],
+  imports: [ProductCard, MatButtonModule, MatSlideToggleModule, MatIconModule, MatDialogModule, CategoryDropDown, Spinner],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductList implements OnInit{
   #productService = inject(ProductService);
