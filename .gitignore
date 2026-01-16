@@ -1,0 +1,72 @@
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+virtualenv/
+
+# Pyenv
+.python-version
+.pyenv/
+pythons/
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+/media
+/staticfiles
+*.pot
+
+# Environment variables
+.env
+.env.local
+env.sh
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node/Angular (from ui-client)
+node_modules/
+/dist
+npm-debug.log
+yarn-error.log
+.angular/
+
+# Database
+*.sqlite3
+*.db
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Cursor
+.cursor/*
+.cursorrules
+
+.nvmrc
