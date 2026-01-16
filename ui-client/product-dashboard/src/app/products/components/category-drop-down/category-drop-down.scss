@@ -1,0 +1,70 @@
+.category-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 40px;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+  white-space: nowrap;
+}
+
+.category-select {
+  width: 200px;
+}
+
+::ng-deep .category-select {
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+
+  .mat-mdc-form-field-infix {
+    min-height: 36px;
+    padding: 8px 0px !important;
+    display: flex;
+  }
+
+  .mat-mdc-select-trigger {
+    height: auto;
+    min-height: 20px;
+    display: flex;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    height: auto;
+  }
+
+  .mat-mdc-form-field {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+  }
+
+  .mat-mdc-text-field-wrapper.mdc-text-field {
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-filter-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    gap: 0.5rem;
+  }
+
+  .filter-label {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .category-select {
+    width: 100%;
+    flex: 1;
+  }
+}
+

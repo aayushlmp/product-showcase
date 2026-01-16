@@ -1,0 +1,139 @@
+<div class="product-details-wrapper">
+  @defer (when product()) {
+  <mat-card class="product-details-card">
+    <!-- Image Section with Overlay -->
+    @if (product()) {
+    <div class="image-container">
+      <div class="image-overlay"></div>
+      <img
+        [src]="product()!.image_url || `product.default.png`"
+        [alt]="product()!.title"
+        class="product-image"
+      />
+      @if (product()!.is_featured) {
+      <div class="featured-badge">
+        <mat-icon>star</mat-icon>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- Header Section -->
+    <div class="card-header-section">
+      <div class="title-section">
+        <h1 class="product-title">{{ product()!.title }}</h1>
+        @if (product()!.category_name) {
+        <mat-chip class="category-chip">
+          <mat-icon>category</mat-icon>
+          {{ product()!.category_name }}
+        </mat-chip>
+        }
+      </div>
+      <div class="price-badge">
+        <span class="price-label">Price</span>
+        <span class="price-value">{{ product()!.price | currency }}</span>
+      </div>
+    </div>
+
+    <!-- Description Section -->
+    <mat-card-content class="card-content">
+      <div class="product-description">
+        <div class="section-header">
+          <mat-icon class="section-icon">description</mat-icon>
+          <h3>About this product</h3>
+          <app-add-to-cart-button [product]="product()!"
+            ><label>Add to Cart</label></app-add-to-cart-button
+          >
+        </div>
+        <p class="description-text">{{ product()!.description }}</p>
+      </div>
+
+      <!-- Info Cards Grid -->
+      <div class="product-info-grid">
+        <div class="info-card">
+          <div class="info-card-icon price-icon">
+            <mat-icon>attach_money</mat-icon>
+          </div>
+          <div class="info-card-content">
+            <span class="info-label">Price</span>
+            <span class="info-value price-value-text"
+              >{{ product()!.price | currency }}</span
+            >
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon date-icon">
+            <mat-icon>calendar_today</mat-icon>
+          </div>
+          <div class="info-card-content">
+            <span class="info-label">Created</span>
+            <span class="info-value"
+              >{{ product()!.created_at | date: 'MMM d, y h:mm a' }}</span
+            >
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon update-icon">
+            <mat-icon>update</mat-icon>
+          </div>
+          <div class="info-card-content">
+            <span class="info-label">Last Updated</span>
+            <span class="info-value"
+              >{{ product()!.updated_at | date: 'MMM d, y h:mm a' }}</span
+            >
+          </div>
+        </div>
+
+        @if (product()!.is_featured) {
+        <div class="info-card featured-info-card">
+          <div class="info-card-icon featured-icon">
+            <mat-icon>star</mat-icon>
+          </div>
+          <div class="info-card-content">
+            <span class="info-label">Status</span>
+            <span class="info-value">Featured</span>
+          </div>
+        </div>
+        }
+      </div>
+    </mat-card-content>
+
+    <!-- Action Buttons -->
+    <mat-card-actions class="card-actions">
+      <button
+        matButton="outlined"
+        color="primary"
+        (click)="backToProducts()"
+        class="action-button back-button"
+      >
+        <mat-icon>arrow_back</mat-icon>
+        <span>Back</span>
+      </button>
+      <div class="action-buttons">
+        <button
+          matButton="filled"
+          color="warn"
+          (click)="openDeleteConfirmation()"
+        >
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+        <button matButton="filled" color="primary" (click)="editProduct()">
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  } @placeholder {
+  <mat-card class="product-details-card">
+    <p>Loading products...</p>
+  </mat-card>
+  } @error {
+  <mat-card class="product-details-card">
+    <p>Error loading product details</p>
+  </mat-card>
+  }
+</div>

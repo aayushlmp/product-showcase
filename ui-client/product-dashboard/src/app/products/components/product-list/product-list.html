@@ -1,0 +1,46 @@
+<div class="products-list-container">
+  <div class="products-header">
+    <h2 class="products-title">Products</h2>
+
+    <div class="header-actions">
+      <!-- <mat-slide-toggle
+        matInput
+        color="primary"
+        labelPosition="before"
+        (change)="featuredChange($event)"
+        ><mat-label>Featured: </mat-label></mat-slide-toggle
+      > -->
+      <app-category-drop-down
+        class="category-dropdown"
+        (categoryChange)="categoryChange($event)"
+      />
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="addProduct()"
+        class="add-product-button"
+      >
+        <mat-icon>add</mat-icon>
+        <span>Add Product</span>
+      </button>
+    </div>
+  </div>
+  <div class="products-grid">
+    @defer (when filteredProducts().length > 0) { @for (product of
+    filteredProducts(); track product.id) {
+    <app-product-card [product]="product" />
+    } @empty {
+    <div class="products-grid empty-grid">
+      <p>No products found</p>
+    </div>
+    }} @placeholder {
+    <div class="products-grid loading-grid">
+      <p>Loading products...</p>
+    </div>
+    } @error {
+    <div class="products-grid error-grid">
+      <p>Error loading products</p>
+    </div>
+    }
+  </div>
+</div>

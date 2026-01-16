@@ -1,0 +1,272 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Electronics",
+      "description": "Latest gadgets and electronic devices",
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Clothing",
+      "description": "Fashion and apparel for all seasons",
+      "created_at": "2024-01-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Home & Kitchen",
+      "description": "Everything you need for your home",
+      "created_at": "2024-01-15T10:10:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Books",
+      "description": "Books, magazines, and reading materials",
+      "created_at": "2024-01-15T10:15:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Sports & Outdoors",
+      "description": "Gear for sports and outdoor activities",
+      "created_at": "2024-01-15T10:20:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "title": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-canceling wireless headphones with 30-hour battery life. Features active noise cancellation, crystal-clear audio, and comfortable over-ear design.",
+      "category": 1,
+      "price": "149.99",
+      "priority": "high",
+      "is_featured": true,
+      "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+      "created_at": "2024-02-01T09:00:00Z",
+      "updated_at": "2024-02-01T09:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "title": "Smart Watch Series 5",
+      "description": "Advanced fitness tracking smartwatch with heart rate monitor, GPS, and water resistance. Track your workouts, receive notifications, and monitor your health 24/7.",
+      "category": 1,
+      "price": "299.99",
+      "priority": "critical",
+      "is_featured": true,
+      "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+      "created_at": "2024-02-02T10:30:00Z",
+      "updated_at": "2024-02-02T10:30:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "title": "4K Ultra HD Smart TV 55\"",
+      "description": "Stunning 55-inch 4K Ultra HD Smart TV with HDR support and built-in streaming apps. Experience cinema-quality entertainment at home.",
+      "category": 1,
+      "price": "599.99",
+      "priority": "medium",
+      "is_featured": true,
+      "image_url": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400",
+      "created_at": "2024-02-03T11:15:00Z",
+      "updated_at": "2024-02-03T11:15:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "title": "Classic Denim Jacket",
+      "description": "Timeless denim jacket with a modern fit. Made from durable cotton denim, perfect for layering in any season. Available in multiple washes.",
+      "category": 2,
+      "price": "79.99",
+      "priority": "medium",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400",
+      "created_at": "2024-02-04T12:00:00Z",
+      "updated_at": "2024-02-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "title": "Premium Cotton T-Shirt Pack",
+      "description": "Set of 3 premium cotton t-shirts in classic colors. Soft, breathable, and perfect for everyday wear. Pre-shrunk and machine washable.",
+      "category": 2,
+      "price": "34.99",
+      "priority": "low",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+      "created_at": "2024-02-05T13:20:00Z",
+      "updated_at": "2024-02-05T13:20:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "title": "Running Shoes Pro",
+      "description": "High-performance running shoes with advanced cushioning technology. Lightweight, breathable mesh upper with responsive sole for maximum comfort during long runs.",
+      "category": 5,
+      "price": "129.99",
+      "priority": "high",
+      "is_featured": true,
+      "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+      "created_at": "2024-02-06T14:45:00Z",
+      "updated_at": "2024-02-06T14:45:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "title": "Stainless Steel Coffee Maker",
+      "description": "Professional-grade 12-cup programmable coffee maker with thermal carafe. Brew-pause function and auto shut-off for convenience and safety.",
+      "category": 3,
+      "price": "89.99",
+      "priority": "medium",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400",
+      "created_at": "2024-02-07T15:30:00Z",
+      "updated_at": "2024-02-07T15:30:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "title": "Non-Stick Cookware Set",
+      "description": "10-piece non-stick cookware set including pots, pans, and lids. Durable construction with easy-clean surfaces. Dishwasher safe and oven safe up to 400°F.",
+      "category": 3,
+      "price": "159.99",
+      "priority": "medium",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1584990347449-39b4aa7c2f5b?w=400",
+      "created_at": "2024-02-08T16:00:00Z",
+      "updated_at": "2024-02-08T16:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "title": "Python Programming: Complete Guide",
+      "description": "Comprehensive guide to Python programming from beginner to advanced. Includes practical examples, exercises, and real-world projects. 600+ pages.",
+      "category": 4,
+      "price": "44.99",
+      "priority": "low",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400",
+      "created_at": "2024-02-09T17:15:00Z",
+      "updated_at": "2024-02-09T17:15:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "title": "The Art of Web Design",
+      "description": "Essential guide to modern web design principles and best practices. Learn responsive design, UX/UI fundamentals, and design systems.",
+      "category": 4,
+      "price": "39.99",
+      "priority": "low",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400",
+      "created_at": "2024-02-10T18:00:00Z",
+      "updated_at": "2024-02-10T18:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "title": "Yoga Mat Premium",
+      "description": "Extra thick (6mm) yoga mat with non-slip surface. Eco-friendly materials, includes carrying strap. Perfect for yoga, pilates, and floor exercises.",
+      "category": 5,
+      "price": "49.99",
+      "priority": "medium",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400",
+      "created_at": "2024-02-11T19:30:00Z",
+      "updated_at": "2024-02-11T19:30:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "title": "Camping Tent 4-Person",
+      "description": "Spacious 4-person camping tent with waterproof rainfly and easy setup. Includes mesh windows for ventilation and storage pockets. Perfect for family camping trips.",
+      "category": 5,
+      "price": "189.99",
+      "priority": "high",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=400",
+      "created_at": "2024-02-12T20:00:00Z",
+      "updated_at": "2024-02-12T20:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "title": "Mechanical Gaming Keyboard",
+      "description": "RGB mechanical keyboard with customizable backlighting and programmable keys. Cherry MX switches for tactile feedback. Perfect for gaming and productivity.",
+      "category": 1,
+      "price": "119.99",
+      "priority": "critical",
+      "is_featured": true,
+      "image_url": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400",
+      "created_at": "2024-02-13T21:00:00Z",
+      "updated_at": "2024-02-13T21:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "title": "Wireless Gaming Mouse",
+      "description": "High-precision wireless gaming mouse with adjustable DPI up to 16000. Ergonomic design with programmable buttons and RGB lighting. 70-hour battery life.",
+      "category": 1,
+      "price": "69.99",
+      "priority": "medium",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400",
+      "created_at": "2024-02-14T22:00:00Z",
+      "updated_at": "2024-02-14T22:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "title": "Winter Parka Jacket",
+      "description": "Warm insulated winter parka with faux fur hood trim. Water-resistant outer shell with multiple pockets. Available in various sizes and colors.",
+      "category": 2,
+      "price": "149.99",
+      "priority": "high",
+      "is_featured": false,
+      "image_url": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400",
+      "created_at": "2024-02-15T23:00:00Z",
+      "updated_at": "2024-02-15T23:00:00Z"
+    }
+  }
+]

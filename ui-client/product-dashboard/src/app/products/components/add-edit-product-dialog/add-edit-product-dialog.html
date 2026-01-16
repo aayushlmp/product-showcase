@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{ product ? 'Edit Product' : 'Add Product' }}</h2>
+<mat-dialog-content class="mat-typography">
+  <app-product-form [form]="productForm"></app-product-form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button matButton mat-dialog-close>Cancel</button>
+  <button
+    matButton
+    color="primary"
+    matButton="filled"
+    (click)="saveClickHandler()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

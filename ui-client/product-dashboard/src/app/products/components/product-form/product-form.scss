@@ -1,0 +1,24 @@
+.product-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 500px;
+    margin-top: 5px;
+}
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+.mat-mdc-form-field {
+    display: flex;
+}
+.mat-mdc-dialog-container-with-actions .mat-mdc-dialog-content {
+    padding: 0;
+}
+@media (max-width: 500px) {
+    .product-form-container {
+        min-width: 100%;
+    }
+}

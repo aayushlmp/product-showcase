@@ -1,0 +1,24 @@
+<div class="upload-box">
+  <input
+    #fileInput
+    type="file"
+    accept="image/*"
+    hidden
+    (change)="onFileSelected($event)"
+  />
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="trigger($event, fileInput)"
+  >
+    <mat-icon>upload</mat-icon>
+    Upload Image
+  </button>
+  @if (url()) {
+  <div class="preview">
+    <mat-icon (click)="remove()">remove_circle</mat-icon>
+    <img [src]="url()" />
+  </div>
+  }
+</div>

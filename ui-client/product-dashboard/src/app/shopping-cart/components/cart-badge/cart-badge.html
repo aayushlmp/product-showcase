@@ -1,0 +1,16 @@
+<!-- Cart Icon with Badge -->
+<button
+  mat-icon-button
+  class="cart-button"
+  aria-label="Shopping cart"
+  routerLink="/view-cart"
+  routerLinkActive="active"
+>
+  <mat-icon
+    matBadge="{{ cartItemCounter() }}"
+    [matBadgeHidden]="cartItemCounter() === 0"
+    matBadgeColor="accent"
+    matBadgeOverlap="false"
+    >shopping_cart</mat-icon
+  >
+</button>

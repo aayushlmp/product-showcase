@@ -1,0 +1,152 @@
+:host {
+  position: relative;
+  display: block;
+  z-index: 1000;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 1rem;
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  a {
+    color: white;
+    white-space: nowrap;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.menu-button {
+  display: none;
+  color: white;
+
+  mat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 0.3s ease;
+  border: 1px solid rgba(25, 118, 210, 0.2);
+  min-width: 160px;
+  overflow: hidden;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  justify-content: flex-start;
+  min-width: auto;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: rgba(25, 118, 210, 0.08);
+  }
+
+  &.active {
+    background-color: rgba(25, 118, 210, 0.12);
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 0.75rem;
+    min-height: 64px;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+    max-width: 150px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .cart-button {
+    margin-right: 0.25rem;
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 0.5rem;
+    min-height: 56px;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+    max-width: 120px;
+  }
+
+  .mobile-nav {
+    right: 0.5rem;
+    min-width: 140px;
+  }
+}
+

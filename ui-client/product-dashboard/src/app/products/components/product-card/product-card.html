@@ -1,0 +1,49 @@
+<mat-card class="product-card">
+  @if (product()) {
+  <div class="image-container">
+    <img
+      mat-card-image
+      [src]="product().image_url || `product.default.png`"
+      class="product-image"
+      onerror="this.src='product.default.png'"
+    />
+    @if (product().is_featured) {
+    <div
+      [class]="product().image_url ? `featured-badge` : `featured-badge-no-image`"
+    >
+      <mat-icon>star</mat-icon>
+    </div>
+    }
+  </div>
+  }
+
+  <mat-card-header>
+    <mat-card-title class="product-title">{{ product().title }}</mat-card-title>
+    @if (product().category_name) {
+    <mat-card-subtitle>{{ product().category_name }}</mat-card-subtitle>
+    }
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="product-description">{{ product().description }}</p>
+    <div class="product-info">
+      <span class="product-price">{{ product().price | currency }}</span>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions class="card-actions">
+    <app-add-to-cart-button [product]="product()" />
+    <button
+      matButton="outlined"
+      color="primary"
+      [routerLink]="['/products/details', product().id]"
+    >
+      <mat-icon>visibility</mat-icon>
+      View
+    </button>
+    <button matButton="filled" color="primary" (click)="editProduct()">
+      <mat-icon>edit</mat-icon>
+      Edit
+    </button>
+  </mat-card-actions>
+</mat-card>

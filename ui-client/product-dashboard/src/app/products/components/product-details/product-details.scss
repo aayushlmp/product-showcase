@@ -1,0 +1,607 @@
+.product-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 2rem;
+  min-height: 100vh;
+  background: #f5f5f5;
+  animation: fadeIn 0.5s ease-in;
+
+  // Ensure mat-icons and text inside mat-chip are centered
+  ::ng-deep mat-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+
+    mat-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    .mdc-evolution-chip__text-label {
+      display: inline-flex;
+      align-items: center;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-details-wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  animation: slideUp 0.6s ease-out;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-details-card {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+  background: white;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  // Image Container
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 500px;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      display: block;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #ff9800;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-weight: 500;
+      font-size: 0.75rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+      mat-icon {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  // Header Section
+  .card-header-section {
+    padding: 2rem 4rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    background: white;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+
+    .title-section {
+      flex: 1;
+
+      .product-title {
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin: 0 0 1rem 0;
+        color: rgba(0, 0, 0, 0.87);
+        line-height: 1.2;
+      }
+
+      .category-chip {
+        background-color: rgba(0, 0, 0, 0.08);
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+        line-height: 1.5;
+
+        mat-icon {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          vertical-align: middle;
+          line-height: 1;
+        }
+      }
+    }
+
+    .price-badge {
+      text-align: right;
+      padding: 1rem 1.5rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+
+      .price-label {
+        display: block;
+        font-size: 0.875rem;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+      }
+
+      .price-value {
+        display: block;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1;
+        color: #3f51b5;
+      }
+    }
+  }
+
+  // Card Content
+  .card-content {
+    padding: 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .product-description {
+    margin-bottom: 2.5rem;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+
+      .section-icon {
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.87);
+      }
+    }
+
+    .description-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(0, 0, 0, 0.6);
+      white-space: pre-wrap;
+      padding: 1rem 0;
+    }
+  }
+
+  // Info Grid
+  .product-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    .info-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: box-shadow 0.2s ease-in-out;
+      border: 1px solid #e0e0e0;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background-color: rgba(25, 118, 210, 0.1);
+
+        mat-icon {
+          font-size: 24px;
+          width: 24px;
+          height: 24px;
+          color: #3f51b5;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &.date-icon,
+        &.update-icon {
+          background-color: rgba(0, 0, 0, 0.06);
+          
+          mat-icon {
+            color: rgba(0, 0, 0, 0.54);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        &.featured-icon {
+          background-color: rgba(255, 152, 0, 0.1);
+          
+          mat-icon {
+            color: #ff9800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+
+      .info-card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .info-label {
+          font-size: 0.875rem;
+          color: rgba(0, 0, 0, 0.6);
+          font-weight: 400;
+        }
+
+        .info-value {
+          font-size: 1rem;
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.87);
+        }
+
+        .price-value-text {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #3f51b5;
+        }
+
+        .featured-chip-badge {
+          background-color: #ff9800;
+          color: white;
+          font-weight: 500;
+          padding: 0.25rem 0.75rem;
+          border-radius: 12px;
+          font-size: 0.75rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          width: fit-content;
+          text-align: center;
+          line-height: 1.5;
+
+          mat-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // Actions
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    gap: 1rem;
+    // background: #fafafa;
+    border-top: 1px solid #e0e0e0;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// Loading State
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 6rem 2rem;
+  min-height: 60vh;
+
+  .spinner-wrapper {
+    background: white;
+    padding: 2rem;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .loading-text {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.1rem;
+    font-weight: 500;
+    animation: fadeInOut 1.5s infinite;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Error State
+.error-wrapper {
+  width: 100%;
+  max-width: 500px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.error-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+
+    .error-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(244, 67, 54, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: shake 0.5s ease-in-out;
+
+      mat-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        color: #f44336;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-10px);
+      }
+      75% {
+        transform: translateX(10px);
+      }
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    .error-message {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .error-button {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .product-details-container {
+    padding: 0 1rem;
+    background: #f5f5f5;
+  }
+
+  .product-details-card {
+    .image-container {
+      height: 40vh;
+      min-height: 300px;
+    }
+
+    .card-header-section {
+      flex-direction: column;
+      padding: 1.5rem;
+      max-width: 100%;
+
+      .title-section .product-title {
+        font-size: 1.75rem;
+      }
+
+      .price-badge {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      max-width: 100%;
+    }
+
+    .product-description {
+      .section-header h3 {
+        font-size: 1.25rem;
+      }
+
+      .description-text {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+    }
+
+    .product-info-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card-actions {
+      flex-direction: column;
+      padding: 1.5rem;
+      max-width: 100%;
+
+      .action-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details-container {
+    padding: 0 0.75rem;
+  }
+
+  .product-details-card {
+    .card-header-section {
+      .title-section .product-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .product-info-grid .info-card {
+      padding: 1rem;
+
+      .info-card-icon {
+        width: 48px;
+        height: 48px;
+
+        mat-icon {
+          font-size: 24px;
+          width: 24px;
+          height: 24px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

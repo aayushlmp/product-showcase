@@ -1,0 +1,22 @@
+.cart-button {
+  color: white;
+  margin-right: 0.5rem;
+
+  mat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::ng-deep .mat-badge-content {
+    background-color: #FFF;
+    color: #3f51b5;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 768px) {
+    .cart-button {
+        margin-right: 0.25rem;
+    }
+}

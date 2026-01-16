@@ -1,0 +1,42 @@
+.assignment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header-card {
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.1rem;
+}
+
+mat-accordion {
+  display: block;
+}
+
+mat-expansion-panel {
+  margin-bottom: 1rem;
+}
+
+mat-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+mat-list {
+  padding-top: 0;
+}
+
+mat-list-item {
+  height: auto !important;
+  padding: 0.5rem 0 !important;
+}
+
+mat-checkbox {
+  width: 100%;
+}

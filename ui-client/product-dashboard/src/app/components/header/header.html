@@ -1,0 +1,55 @@
+<mat-toolbar color="primary" class="navbar">
+  <span
+    class="navbar-brand pointer"
+    routerLink="/products"
+    routerLinkActive="active"
+    >Product Showcase</span
+  >
+  <span class="spacer"></span>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+    <a mat-button routerLink="/assignment" routerLinkActive="active"
+      >Assignment</a
+    >
+  </nav>
+
+  <app-cart-badge />
+
+  <!-- Mobile Menu Button -->
+  <button
+    mat-icon-button
+    class="menu-button"
+    (click)="toggleMenu()"
+    aria-label="Toggle menu"
+  >
+    <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Mobile Menu Dropdown -->
+@if (isMenuOpen()) {
+<nav class="mobile-nav">
+  <a
+    mat-button
+    color="primary"
+    routerLink="/products"
+    routerLinkActive="active"
+    (click)="closeMenu()"
+    class="mobile-nav-link"
+  >
+    Products
+  </a>
+  <a
+    mat-button
+    color="primary"
+    routerLink="/assignment"
+    routerLinkActive="active"
+    (click)="closeMenu()"
+    class="mobile-nav-link"
+  >
+    Assignment
+  </a>
+</nav>
+}
