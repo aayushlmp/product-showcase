@@ -10,7 +10,7 @@ import { catchError, retry, tap } from 'rxjs/operators';
 export class ApiService {
   private http = inject(HttpClient);
 
-  private baseUrl = 'http://localhost:8000';
+  private baseUrl = 'http://192.168.31.55:8000';
 
   constructor() {}
 
